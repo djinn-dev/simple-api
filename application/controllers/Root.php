@@ -3,21 +3,11 @@
 
 class Root extends Controller
 {
-	public function index()
-	{
-        switch ($_SERVER['REQUEST_METHOD'])
-        {
-            case 'GET':
-                $this->__indexGet();
-                break;
-            default:
-                $this->_invalidMethod(['GET']);
-                break;
-        }
-	}
-
-    private function __indexGet()
+    public function index()
     {
-        $this->_outputJson();
+        if($_SERVER['REQUEST_METHOD'] !== 'GET')
+        {
+            $this->_invalidMethod(['GET']);
+        }
     }
 }
