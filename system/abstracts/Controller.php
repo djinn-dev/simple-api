@@ -12,6 +12,7 @@ abstract class Controller Extends Core
      * @var array Handles json output
      */
     public array $data = [];
+    public array $errors = [];
 
     /**
      * Controller de-constructor.
@@ -27,6 +28,13 @@ abstract class Controller Extends Core
         header("Access-Control-Allow-Headers: X-Requested-With");
         // Output Format
         header('Content-Type: application/json');
+
+        // Handle errors output
+        if($this->errors)
+        {
+            $this->data['status'] = 400;
+            $this->data['errors'] = $this->errors;
+        }
 
         // Standard Output
         $this->data['timestamp'] = time();
