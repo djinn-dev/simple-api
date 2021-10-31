@@ -1,0 +1,14 @@
+{
+  "name": "djinndev/simple-api",
+  "description": "A simple API framework build for PHP.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+	{
+	  "name": "Trevor Geene",
+	  "email": "trevor.geene@gmail.com"
+	}
+  ],
+  "require": {
+  }
+}
